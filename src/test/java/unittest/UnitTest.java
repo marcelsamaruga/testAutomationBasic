@@ -1,6 +1,5 @@
 package unittest;
 
-import junit.framework.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
@@ -33,11 +32,42 @@ public class UnitTest {
 
         assertTrue( result == 2 );
     }
+
+    @Test
+    public void subtract() {
+        MathClass mathClass = new MathClass();
+
+        //
+        assertTrue( false );
+    }
+
+    @Test
+    public void medium() {
+        MathClass mathClass = new MathClass();
+        double[] values = new double[] {6, 10, 4};
+
+        //
+        assertTrue( false );
+    }
 }
 
 class MathClass {
     int sum(int a, int b) {
         return a + b;
+    }
+
+    int substract(int a, int b) {
+        return a - b;
+    }
+
+    double medium(double[] values) {
+        double result = 0;
+
+        for (int i=0; i<values.length; i++) {
+            result += values[i];
+        }
+
+        return result / values.length;
     }
 
     int module(int a) {
