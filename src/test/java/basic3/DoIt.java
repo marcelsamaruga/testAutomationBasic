@@ -2,6 +2,8 @@ package basic3;
 
 import basic1.improved.AbstractAutomation;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 /**
  * Documentation: https://seleniumhq.github.io/selenium/docs/api/java/index.html?org/openqa/selenium/
@@ -18,8 +20,16 @@ public class DoIt extends AbstractAutomation {
 
     @Test
     public void doIt() throws Exception {
+    	driver.get(getURL());
 
-
+    	WebElement input = driver.findElement(By.id("lst-ib"));
+    	WebElement searchButton = driver.findElement(By.name("btnK")); 
+    	//WebElement searchResult = driver.findElement(By.linkText("Selenium WebDriver"));   	
+    	
+    	input.sendKeys("Selenium WebDriver");
+    	searchButton.click();
+    	//searchResult.click();
+    	
 
     }
 }

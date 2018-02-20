@@ -48,7 +48,7 @@ public class Automation {
     @After
     public void tearDown() throws Exception {
         // close the browser
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
@@ -57,7 +57,7 @@ public class Automation {
         WebElement input = driver.findElement( By.id("source") );
 
         // set any value on the element
-        input.sendKeys("Testing");
+        input.sendKeys("Bom dia");
 
         // get an button element by the id
         WebElement searchButton = driver.findElement( By.id("gt-submit") );

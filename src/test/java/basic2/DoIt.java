@@ -3,8 +3,12 @@ package basic2;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
 
@@ -37,20 +41,32 @@ public class DoIt {
 
         //
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        
     }
 
-    @After
+
+
+	@After
     public void tearDown() throws Exception {
         // close the browser
-        driver.quit();
+        //driver.quit();
     }
 
     @Test
     public void doIt() throws Exception {
         // the get method forwards to a specific URL
         driver.get(URL);
+        verifyCheckBoxes();
 
-
+    }
+    
+    public void verifyCheckBoxes() throws Exception {
+    	WebElement checkbox1 = driver.findElement(By.name("vehicle1")); 
+        checkbox1.click();
+        
+        assertTrue(checkbox1.isSelected());
+        
+        System.out.println(checkbox1.getAttribute("value") + ": " + checkbox1.isSelected());
     }
 
 }

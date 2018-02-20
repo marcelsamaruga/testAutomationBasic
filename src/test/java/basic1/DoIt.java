@@ -3,7 +3,9 @@ package basic1;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -48,6 +50,16 @@ public class DoIt {
     public void doIt() throws Exception {
         // the get method forwards to a specific URL
         driver.get("https://translate.google.com/");
+        
+        WebElement input = driver.findElement(By.id("source"));
+        
+        input.sendKeys("laptop");
+        
+        WebElement btn = driver.findElement(By.id("gt-submit"));
+        
+        btn.click();
+        
+        
     }
 
 }

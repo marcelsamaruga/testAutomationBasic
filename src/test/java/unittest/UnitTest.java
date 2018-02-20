@@ -16,7 +16,7 @@ public class UnitTest {
         int b = 2;
 
         MathClass mathClass = new MathClass();
-        int result = mathClass.sum(1, 2);
+        int result = mathClass.sum(a, b);
 
         assertNotNull( result );
         assertTrue( result == 3 );
@@ -28,17 +28,21 @@ public class UnitTest {
         int b = 2;
 
         MathClass mathClass = new MathClass();
-        int result = mathClass.higher(1, 2);
+        int result = mathClass.higher(a, b);
 
         assertTrue( result == 2 );
     }
 
     @Test
     public void subtract() {
+        int a = 2;
+        int b = 1;
+        
         MathClass mathClass = new MathClass();
+        int result = mathClass.substract(a, b);
 
         //
-        assertTrue( false );
+        assertTrue( result == 1 );
     }
 
     @Test
@@ -76,8 +80,8 @@ class MathClass {
 
     int higher(int a, int b) {
         if (a>b) {
-            return b;
+            return a;
         }
-        return a;
+        return b;
     }
 }

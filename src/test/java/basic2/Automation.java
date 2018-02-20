@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Documentation: https://seleniumhq.github.io/selenium/docs/api/java/index.html?org/openqa/selenium/
@@ -48,7 +49,7 @@ public class Automation {
     @After
     public void tearDown() throws Exception {
         // close the browser
-        driver.quit();
+        //driver.quit();
     }
 
 
@@ -57,12 +58,14 @@ public class Automation {
     public void testCheckboxes_W3Schools() throws Exception {
         // to get an element by the name
         WebElement checkbox1 = driver.findElement( By.name("vehicle1") );
+        
+        checkbox1.click();
 
         // the checkbox element has a method isSelected(): true/false
         boolean isFirstSelected = checkbox1.isSelected();
 
         // assert: junit method to validate a specific condition
-        assertFalse(isFirstSelected);
+        assertTrue(isFirstSelected);
 
         // it prints out on the console
         System.out.println(checkbox1.getAttribute("value") + ": " + isFirstSelected);
